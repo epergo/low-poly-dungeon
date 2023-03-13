@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyiyt87hopfn8"]
+[gd_scene load_steps=12 format=3 uid="uid://dyiyt87hopfn8"]
 
 [ext_resource type="Shader" path="res://dungeon/CRTShader.gdshader" id="1_7vss6"]
-[ext_resource type="PackedScene" path="res://fps_counter.tscn" id="1_hyrfd"]
+[ext_resource type="PackedScene" uid="uid://bdpw1iau24bky" path="res://fps_counter.tscn" id="1_hyrfd"]
 [ext_resource type="PackedScene" uid="uid://dqir4y0wcvu6i" path="res://player.tscn" id="1_i7hrd"]
+[ext_resource type="Script" path="res://dungeon/dungeon.gd" id="1_oe2cj"]
 [ext_resource type="MeshLibrary" uid="uid://cjdocd23yo3wa" path="res://dungeon/tileset.tres" id="2_oqlrw"]
+[ext_resource type="Script" path="res://dungeon/DonutsCounter.gd" id="4_js530"]
 [ext_resource type="PackedScene" uid="uid://4o4i8kaykntc" path="res://donut.tscn" id="5_udqnx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ja18"]
@@ -36,6 +38,7 @@ fog_light_energy = 0.03
 volumetric_fog_density = 0.02
 
 [node name="Dungeon" type="Node"]
+script = ExtResource("1_oe2cj")
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_3ja18")
@@ -50,8 +53,33 @@ environment = SubResource("Environment_hmx7p")
 
 [node name="FPSCounter" parent="." instance=ExtResource("1_hyrfd")]
 
+[node name="DonutsCounter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_js530")
+
+[node name="Control" type="MarginContainer" parent="DonutsCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+
+[node name="Counter" type="Label" parent="DonutsCounter/Control"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 8
+text = "4 / 4 Donuts"
+
 [node name="Player" parent="." instance=ExtResource("1_i7hrd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(-0.0466706, 0, -0.99891, 0, 1, 0, 0.99891, 0, -0.0466706, 10.8262, 2.32425, 6.33419)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

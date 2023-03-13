@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody3D
 
 const SPEED = 5.0
@@ -11,10 +12,18 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 @onready var _camera: Camera3D = $Head/Camera3D
 @onready var _light: SpotLight3D = $Head/Flashlight
+@onready var _collectablesArea: Area3D = $CollectablesArea
+
+signal donut_collected
 
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	_collectablesArea.area_entered.connect(_on_collectables_area_entered)
+
+
+func _on_collectables_area_entered(_collided_area) -> void:
+	emit_signal("donut_collected")
 
 
 func _physics_process(delta: float) -> void:

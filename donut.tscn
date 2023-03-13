@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://4o4i8kaykntc"]
+
+[ext_resource type="PackedScene" uid="uid://c0ihcn5y4u7sc" path="res://blender/donut/donut.glb" id="1_7koqy"]
+
+[node name="donut" instance=ExtResource("1_7koqy")]
+
+[node name="Donut" parent="." index="0"]
+transform = Transform3D(0.642788, -0.663414, -0.383022, -5.96046e-08, 0.5, -0.866026, 0.766044, 0.556671, 0.321394, 0, 0.0278772, 0)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "DonutAction001"

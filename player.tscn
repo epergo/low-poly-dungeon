@@ -21,7 +21,7 @@ mesh = SubResource("CapsuleMesh_fvn6n")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Flashlight" type="SpotLight3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 light_color = Color(1, 0.94902, 0.8, 1)
 light_energy = 1.5
 spot_range = 25.0

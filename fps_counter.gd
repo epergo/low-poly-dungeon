@@ -5,4 +5,4 @@ extends Control
 
 func _process(_delta: float) -> void:
 	var fps: String = str(Engine.get_frames_per_second())
-	_counter.set_text("FPS " + fps)
+	_counter.set_text(fps + " FPS")

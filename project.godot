@@ -16,10 +16,6 @@ config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
-[autoload]
-
-SceneTransitionManagerSingleton="*res://scenes/scene_transition_manager.tscn"
-
 [display]
 
 window/size/viewport_width=320

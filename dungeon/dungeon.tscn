@@ -79,7 +79,7 @@ theme_override_font_sizes/font_size = 8
 text = "4 / 4 Donuts"
 
 [node name="Player" parent="." instance=ExtResource("1_i7hrd")]
-transform = Transform3D(-0.0466706, 0, -0.99891, 0, 1, 0, 0.99891, 0, -0.0466706, 10.8262, 2.32425, 6.33419)
+transform = Transform3D(-0.0466706, 0, -0.99891, 0, 1, 0, 0.99891, 0, -0.0466706, -2.5, 2, 0)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
